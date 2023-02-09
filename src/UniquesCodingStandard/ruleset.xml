@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+         name="UniquesCodingStandard">
+    <description>The Uniques coding standard.</description>
+
+    <rule ref="LaminasCodingStandard">
+        <exclude name="Generic.PHP.ForbiddenFunctions.Found" />
+        <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFallbackGlobalName" />
+
+        <!-- These are excluded temporarily, we want to turn them on later -->
+        <exclude name="SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedEqualOperator" />
+    </rule>
+</ruleset>

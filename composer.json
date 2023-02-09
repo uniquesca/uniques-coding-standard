@@ -1,0 +1,35 @@
+{
+  "name": "uniquesca/uniques-coding-standard",
+  "type": "phpcodesniffer-standard",
+  "description": "Uniques Coding Standard",
+  "keywords": [
+    "uniques",
+    "coding standard"
+  ],
+  "require": {
+    "php": ">8.1",
+    "laminas/laminas-coding-standard": "^2.5.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "UniquesCodingStandard\\": "src/UniquesCodingStandard/"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@test-prepare",
+      "@test-fix",
+      "@test-diff"
+    ],
+    "create-report": "phpcs $(find test/fixable/* | sort) --report=summary --report-file=test/expected-report.txt",
+    "test-diff": "diff test/fix test/fixed",
+    "test-fix": "phpcbf test/fix > /dev/null || true",
+    "test-prepare": "rm -rf test/fix/; cp -R test/fixable/ test/fix/;"
+  }
+}
