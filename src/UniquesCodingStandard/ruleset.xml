@@ -10,5 +10,6 @@
 
         <!-- These are excluded temporarily, we want to turn them on later -->
         <exclude name="SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedEqualOperator" />
+        <exclude name="SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedNotEqualOperator" />
     </rule>
 </ruleset>
