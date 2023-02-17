@@ -5,3 +5,6 @@ New: introduced coding standard based on a slightly tweaked Laminas Coding Stand
 
 ## v1.0.1
 Update: removed SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedNotEqualOperator rule;
+
+## v1.0.2
+Update: removed SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation;
