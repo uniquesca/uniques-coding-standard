@@ -1,7 +1,6 @@
-# uniques-coding-standard
-Uniques coding standard
+# Uniques coding standard
 
-The coding standard ruleset for Uniques components.
+Coding standard ruleset for Uniques components.
 
 This specification tweaks [Laminas Coding Standard](https://github.com/laminas/laminas-coding-standard).
 
