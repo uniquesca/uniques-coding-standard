@@ -2,24 +2,7 @@
 /auth.json
 
 # IDEA files
-/.idea/dictionaries/
-/.idea/dataSources.xml
-/.idea/deployment.xml
-/.idea/sshConfigs.xml
-/.idea/webServers.xml
-/.idea/php.xml
-/.idea/workspace.xml
-
-# PHPUnit files
-/phpunit.xml
-/.phpunit.result.cache
-/coverage/
-/profiles/
-/clover.xml
-
-# PHPCS files
-/.phpcs-cache
-/phpcs.log
+/.idea/
 
 # Composer files
 /composer.phar

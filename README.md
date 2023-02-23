@@ -1,9 +1,10 @@
-# uniques-coding-standard
-Uniques coding standard
+# Uniques Coding Standard
 
-The coding standard ruleset for Uniques components.
-
-This specification tweaks [Laminas Coding Standard](https://github.com/laminas/laminas-coding-standard).
+This library is established Uniques Coding Standard which incorporates the following:
+1. Codestyle ruleset for PHP Codesniffer - it is a tweaked version of 
+  [Laminas Coding Standard](https://github.com/laminas/laminas-coding-standard)
+2. Rules for checking code for potential bugs by Psalm - right now base level is 
+  set to 3 out of 9 (the lower the level, the more strict are the rules).
 
 All Uniques developers are obliged to adhere to this coding standard.
 
@@ -19,104 +20,51 @@ All Uniques developers are obliged to adhere to this coding standard.
 
    ```json
    "scripts": {
-     "cs-check": "phpcs",
-     "cs-fix": "phpcbf"
+     "cs-check": "./vendor/bin/phpcs",
+     "cs-fix": "./vendor/bin/phpcbf",
+     "psalm": "./vendor/bin/psalm --show-info"
    }
    ```
 
-3. Create file `phpcs.xml` on base path of your repository with this content:
+3. Copy `phpcs.xml.dist` file from this project to `phpcs.xml` file in the root directory
+   of your repository, adjust list of paths accordingly.
+   You can add or exclude some locations in that file.
+   For a reference please see: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset
 
-   ```xml
-   <?xml version="1.0"?>
-   <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-
-       <arg name="basepath" value="."/>
-       <arg name="cache" value=".phpcs-cache"/>
-       <arg name="colors"/>
-       <arg name="extensions" value="php"/>
-       <arg name="parallel" value="80"/>
-
-       <!-- Show progress -->
-       <arg value="sp"/>
-
-       <!-- Paths to check -->
-       <file>config</file>
-       <file>src</file>
-       <file>test</file>
-
-       <!-- Include all rules from the Uniques Coding Standard -->
-       <rule ref="UniquesCodingStandard"/>
-   </ruleset>
-   ```
-
-You can add or exclude some locations in that file.
-For a reference please see: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset
+4. Copy `psalm.xml.dist` file from this project to `psalm.xml` file in the root directory
+   of your repository, adjust list of paths accordingly.
 
 ## Usage
 
-- To run checks only:
+- To run code style check:
 
   ```bash
   composer cs-check
   ```
 
-- To automatically fix many CS issues:
+- To automatically fix many codestyle issues:
 
   ```bash
   composer cs-fix
   ```
 
-## Ignoring parts of a File
+- To run code inspection for potential bugs:
 
-> Note: Disabling sniffer checks should not be done without a solid reason. Integration with the Standard can be 
-> gradual, but once it's done, code should be maintained according to the Standard as much as possible.
+  ```bash
+  composer psalm
+  ```
+  
+- If there are issues that can be fixed automatically by Psalm:
 
-> Note: Before PHP_CodeSniffer version 3.2.0, `// @codingStandardsIgnoreStart` and `// @codingStandardsIgnoreEnd` were
-> used. These are deprecated and will be removed in PHP_CodeSniffer version 4.0.
-
-Disable parts of a file:
-
-```php
-$xmlPackage = new XMLPackage;
-// phpcs:disable
-$xmlPackage['error_code'] = get_default_error_code_value();
-$xmlPackage->send();
-// phpcs:enable
-```
-
-Disable a specific rule:
-
-```php
-// phpcs:disable Generic.Commenting.Todo.Found
-$xmlPackage = new XMLPackage;
-$xmlPackage['error_code'] = get_default_error_code_value();
-// TODO: Add an error message here.
-$xmlPackage->send();
-// phpcs:enable
-```
-
-Ignore a specific violation:
-
-```php
-$xmlPackage = new XMLPackage;
-$xmlPackage['error_code'] = get_default_error_code_value();
-// phpcs:ignore Generic.Commenting.Todo.Found
-// TODO: Add an error message here.
-$xmlPackage->send();
-```
-
-## Development
-
-> **New rules or Sniffs may not be introduced in minor or bugfix releases and should always be based on the develop
-branch and queued for the next major release, unless considered a bugfix for existing rules.**
-
-## Reference
-
-Rules can be added, excluded or tweaked locally, depending on your preferences. More information on how to do this can
-be found here:
-
-- [Coding Standard Tutorial](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Coding-Standard-Tutorial)
-- [Configuration Options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options)
-- [Selectively Applying Rules](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset#selectively-applying-rules)
-- [Customisable Sniff Properties](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties)
+  ```bash
+  # Use --dry-run first to check what and how Psalm is going to fix
+  ./vendor/bin/psalter --issues=<ISSUE NAMES FROM THE PSALM RUN> [--dry-run]
+  ```
+  
+## Reference:
+1. [Psalm](https://psalm.dev)
+2. [PHP Codesniffer](https://github.com/squizlabs/PHP_CodeSniffer/wiki)
+   - [Coding Standard Tutorial](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Coding-Standard-Tutorial)
+   - [Configuration Options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options)
+   - [Selectively Applying Rules](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset#selectively-applying-rules)
+   - [Customisable Sniff Properties](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Customisable-Sniff-Properties)

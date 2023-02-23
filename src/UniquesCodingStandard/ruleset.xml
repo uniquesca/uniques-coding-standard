@@ -11,5 +11,8 @@
         <!-- These are excluded temporarily, we want to turn them on later -->
         <exclude name="SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedEqualOperator" />
         <exclude name="SlevomatCodingStandard.Operators.DisallowEqualOperators.DisallowedNotEqualOperator" />
+
+        <!-- We are disabling this because first we need to cover all code with PHPDoc and only then decide what is useless -->
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation" />
     </rule>
 </ruleset>
