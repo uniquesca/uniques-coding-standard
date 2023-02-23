@@ -8,3 +8,6 @@ Update: removed SlevomatCodingStandard.Operators.DisallowEqualOperators.Disallow
 
 ## v1.0.2
 Update: removed SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation;
+
+## v2.0.0
+New: added integration with Psalm for code potential bugs inspections;
