@@ -21,7 +21,8 @@
   },
   "autoload": {
     "psr-4": {
-      "UniquesCodingStandard\\": "src/UniquesCodingStandard/"
+      "UniquesCodingStandard\\": "src/UniquesCodingStandard/",
+      "UniquesPhinxCodingStandard\\": "src/UniquesPhinxCodingStandard/"
     }
   },
   "scripts": {
