@@ -10,5 +10,6 @@
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
         <exclude name="Squiz.Classes.ClassFileName.NoMatch" />
         <exclude name="Generic.Files.InlineHTML.Found" />
+        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
     </rule>
 </ruleset>
