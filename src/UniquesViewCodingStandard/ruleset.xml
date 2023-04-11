@@ -11,6 +11,8 @@
         <exclude name="Squiz.Classes.ClassFileName.NoMatch" />
         <exclude name="Generic.Files.InlineHTML.Found" />
         <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
+        <exclude name="Internal.NoCodeFound" />
+        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
     </rule>
 
     <rule ref="Generic.Files.LineLength">
