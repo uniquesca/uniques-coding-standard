@@ -13,7 +13,8 @@
         <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
         <exclude name="Internal.NoCodeFound" />
         <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
-        <exclude name="Generic.Arrays.ArrayIndent" />
+        <exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect" />
+        <exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
     </rule>
 
     <rule ref="Generic.Files.LineLength">
