@@ -13,9 +13,25 @@
 
    <!-- Paths to check -->
    <file>config</file>
+
+   <!-- Excluding local.php file from inspections -->
+   <exclude-pattern type="relative">^/config/autoload/local\.php</exclude-pattern>
+
+   <!-- Main folder containing source code, it's `src` for libraries, and `module` for Laminas applications -->
    <file>src</file>
+
+   <!-- Test files (if any) -->
    <file>test</file>
 
    <!-- Include all rules from the Uniques Coding Standard -->
-   <rule ref="UniquesCodingStandard"/>
+   <rule ref="UniquesCodingStandard">
+       <exclude-pattern type="relative">^/scripts/migrations/*</exclude-pattern>
+   </rule>
+
+   <!-- Include all rules from the Uniques Phinx Coding Standard -->
+   <rule ref="UniquesPhinxCodingStandard">
+       <exclude-pattern type="relative">^/config/*</exclude-pattern>
+       <exclude-pattern type="relative">^/src/*</exclude-pattern>
+       <exclude-pattern type="relative">^/test/*</exclude-pattern>
+   </rule>
 </ruleset>

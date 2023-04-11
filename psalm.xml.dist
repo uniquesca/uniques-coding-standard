@@ -10,8 +10,10 @@
     findUnusedCode="false"
 >
     <projectFiles>
+        <directory name="config"/>
         <directory name="src"/>
         <directory name="tests"/>
+        <directory name="scripts/migrations"/>
         <ignoreFiles>
             <directory name="vendor"/>
         </ignoreFiles>
@@ -20,4 +22,8 @@
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
     </plugins>
+
+    <issueHandlers>
+        <PropertyNotSetInConstructor errorLevel="suppress" />
+    </issueHandlers>
 </psalm>
