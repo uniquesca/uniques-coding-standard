@@ -19,3 +19,7 @@ New: added integration with Psalm for code potential bugs inspections;
 
 New: added tweaked standard for Phinx migrations;
 Update: turned off PropertyNotSetInConstructor for Psalm in the Psalm config stub
+
+## v2.0.2
+
+New: added tweaked standard for Laminas views;

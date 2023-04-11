@@ -5,7 +5,7 @@
    <arg name="basepath" value="."/>
    <arg name="cache" value=".phpcs-cache"/>
    <arg name="colors"/>
-   <arg name="extensions" value="php"/>
+   <arg name="extensions" value="php,phtml"/>
    <arg name="parallel" value="80"/>
 
    <!-- Show progress -->
@@ -26,6 +26,7 @@
    <!-- Include all rules from the Uniques Coding Standard -->
    <rule ref="UniquesCodingStandard">
        <exclude-pattern type="relative">^/scripts/migrations/*</exclude-pattern>
+       <exclude-pattern>*\.phtml</exclude-pattern>
    </rule>
 
    <!-- Include all rules from the Uniques Phinx Coding Standard -->
@@ -33,5 +34,13 @@
        <exclude-pattern type="relative">^/config/*</exclude-pattern>
        <exclude-pattern type="relative">^/src/*</exclude-pattern>
        <exclude-pattern type="relative">^/test/*</exclude-pattern>
+       <exclude-pattern>*\.phtml</exclude-pattern>
    </rule>
+
+  <!-- Include all rules from the Uniques Phinx Coding Standard -->
+  <rule ref="UniquesViewCodingStandard">
+      <exclude-pattern>*\.php</exclude-pattern>
+      <exclude-pattern>*\.inc</exclude-pattern>
+      <include-pattern>*\.phtml</include-pattern>
+  </rule>
 </ruleset>

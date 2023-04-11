@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd"
+         name="UniquesViewCodingStandard">
+    <description>The Uniques coding standard for View migrations.</description>
+
+    <rule ref="UniquesCodingStandard">
+        <include-pattern>*\.phtml</include-pattern>
+        <!-- Phinx migration do not follow autoloading rules -->
+        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+        <exclude name="Squiz.Classes.ClassFileName.NoMatch" />
+        <exclude name="Generic.Files.InlineHTML.Found" />
+    </rule>
+</ruleset>
