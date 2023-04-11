@@ -17,30 +17,30 @@
    <!-- Excluding local.php file from inspections -->
    <exclude-pattern type="relative">^/config/autoload/local\.php</exclude-pattern>
 
-   <!-- Main folder containing source code, it's `src` for libraries, and `module` for Laminas applications -->
+   <!-- Main folder containing source code for libraries -->
    <file>src</file>
 
-   <!-- Test files (if any) -->
+   <!-- Main folder containing source code for Laminas applications -->
+   <file>module</file>
+
+   <!-- Test files -->
    <file>test</file>
 
    <!-- Include all rules from the Uniques Coding Standard -->
    <rule ref="UniquesCodingStandard">
-       <exclude-pattern type="relative">^/scripts/migrations/*</exclude-pattern>
-       <exclude-pattern>*\.phtml</exclude-pattern>
+        <include-pattern type="relative">^/config/*\.php$</include-pattern>
+        <include-pattern type="relative">^/src/*\.php$</include-pattern>
+        <include-pattern type="relative">^/module/*\.php$</include-pattern>
    </rule>
 
    <!-- Include all rules from the Uniques Phinx Coding Standard -->
    <rule ref="UniquesPhinxCodingStandard">
-       <exclude-pattern type="relative">^/config/*</exclude-pattern>
-       <exclude-pattern type="relative">^/src/*</exclude-pattern>
-       <exclude-pattern type="relative">^/test/*</exclude-pattern>
-       <exclude-pattern>*\.phtml</exclude-pattern>
+        <include-pattern type="relative">^/scripts/migrations/*\.php$</include-pattern>
    </rule>
 
   <!-- Include all rules from the Uniques Phinx Coding Standard -->
   <rule ref="UniquesViewCodingStandard">
-      <exclude-pattern>*\.php</exclude-pattern>
-      <exclude-pattern>*\.inc</exclude-pattern>
-      <include-pattern>*\.phtml</include-pattern>
+        <include-pattern>*\.phtml</include-pattern>
   </rule>
+
 </ruleset>

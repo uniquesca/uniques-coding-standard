@@ -14,13 +14,13 @@
         <directory name="src"/>
         <directory name="tests"/>
         <directory name="scripts/migrations"/>
-        <ignoreFiles>
-            <directory name="vendor"/>
-        </ignoreFiles>
     </projectFiles>
 
     <plugins>
+        <!-- Remove this if the project doesn't use PhpUnit -->
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+        <!-- Remove this if the project doesn't use Doctrine -->
+        <pluginClass class="Weirdan\DoctrinePsalmPlugin"/>
     </plugins>
 
     <issueHandlers>
