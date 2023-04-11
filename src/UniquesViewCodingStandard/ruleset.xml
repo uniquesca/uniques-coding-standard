@@ -11,5 +11,6 @@
         <exclude name="Squiz.Classes.ClassFileName.NoMatch" />
         <exclude name="Generic.Files.InlineHTML.Found" />
         <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
+        <exclude name="Generic.Files.LineLength.TooLong" />
     </rule>
 </ruleset>
