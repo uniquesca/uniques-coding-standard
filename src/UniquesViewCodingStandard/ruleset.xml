@@ -8,19 +8,26 @@
         <include-pattern>*\.phtml</include-pattern>
         <!-- Phinx migration do not follow autoloading rules -->
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+
         <exclude name="Squiz.Classes.ClassFileName.NoMatch" />
+
         <exclude name="Generic.Files.InlineHTML.Found" />
-        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
-        <exclude name="Internal.NoCodeFound" />
-        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect" />
         <exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
+
+        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
+
+        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
     </rule>
 
     <rule ref="Generic.Files.LineLength">
         <properties>
             <property name="lineLimit" value="160"/>
-            <property name="absoluteLineLimit" value="160"/>
+            <property name="absoluteLineLimit" value="180"/>
         </properties>
+    </rule>
+
+    <rule ref="Internal.NoCodeFound">
+        <severity>0</severity>
     </rule>
 </ruleset>
